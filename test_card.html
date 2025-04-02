@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모바일 결제</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .payment-container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .payment-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .form-row {
+      display: flex;
+      gap: 10px;
+    }
+    .form-row .form-group {
+      flex: 1;
+    }
+    .pay-button {
+      width: 100%;
+      padding: 15px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .pay-button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-container">
+    <h2>결제하기</h2>
+    <form autocomplete="on">
+      <div class="form-group">
+        <label for="name">이름</label>
+        <input type="text" id="name" placeholder="카드 소유자 이름" autocomplete="cc-name">
+      </div>
+
+      <div class="form-group">
+        <label for="cardNumber">카드 번호</label>
+        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="expiry">유효기간</label>
+          <input type="text" id="expiry" placeholder="MM/YY" autocomplete="cc-exp">
+        </div>
+        <div class="form-group">
+          <label for="cvc">CVC</label>
+          <input type="text" id="cvc" placeholder="123" maxlength="4" autocomplete="cc-csc">
+        </div>
+      </div>
+
+      <button type="submit" class="pay-button">₩10,000 결제</button>
+    </form>
+  </div>
+
+</body>
+</html>
